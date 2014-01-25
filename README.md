@@ -1,1 +1,5 @@
-This set of files is designed to parse Music XML in order to determine changed in chords throughout a piece of music.
+This is a basic parser for Music XML.
+
+To see the license, go to:
+
+http://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
