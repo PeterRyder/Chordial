@@ -1,1 +1,1 @@
-This is a basic parser for Music XML.
+This set of files is designed to parse Music XML in order to determine changed in chords throughout a piece of music.
