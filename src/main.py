@@ -11,8 +11,8 @@ import scipy
 
 #### File Imports ####
 
-import 'MusicXMLParser.py'
-import 'MusicAnalysis.py'
+import MusicXMLParser
+import MusicAnalysis
 
 ######################
 
