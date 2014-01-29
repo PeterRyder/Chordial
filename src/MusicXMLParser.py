@@ -1,8 +1,14 @@
 # Music XML Parser
 
+# Authors: Peter Ryder, Jake Lowey, Mark Westerhoff
+
+#### API Imports #####
+
 from music21 import *
 from numpy import *
 from scipy import *
+
+######################
 
 import xml.etree.ElementTree as ET
 

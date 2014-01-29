@@ -1,5 +1,6 @@
-# main python file for MusicParser 
-# authors: Peter Ryder, Jake Lowey
+# Main python file for MusicParser 
+
+# Authors: Peter Ryder, Jake Lowey, Mark Westerhoff
 
 #### API Imports #####
 
