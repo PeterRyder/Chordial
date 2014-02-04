@@ -1,0 +1,4 @@
+Music21 License
+
+http://www.gnu.org/copyleft/lesser.html
+
