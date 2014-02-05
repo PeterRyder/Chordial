@@ -19,7 +19,7 @@ from MusicStorage import *
 ######################
 
 musicParsed = MusicXMLParser()
-musicParsed.getBasicInfo('BeetAnGeSample.xml')
+musicParsed.getBasicInfo('../xml examples/BeetAnGeSample.xml')
 
 if musicParsed.song_title != "":
     print "Song Title: " + musicParsed.song_title
