@@ -47,7 +47,12 @@ print ""
 
 # fully parse the xml
 musicParsed.getNotes()
-musicParsed.sheet.show('text')
+#musicParsed.sheet.show('text')
+
+parts = musicParsed.sheet.getElementsByClass(stream.Part)
+#print parts
+notes = parts.getElementsByClass('note.Note')
+print notes
 
 # store the sheet into a data structure
 ## TODO ##
