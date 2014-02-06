@@ -8,7 +8,7 @@
         background-color: green;
       }
       #border{
-        width: 1200px;
+        width: 1600px;
         height: 900px;
         position: relative;
       }
@@ -27,8 +27,8 @@
        width: 175px;
        height: 175px;
        position: absolute;
-       top:700px;
-       left: 600px;
+       top: 650px;
+       left: 1000px;
       }
       #III{
        background-color: red; 
@@ -37,7 +37,7 @@
        height: 175px;
        position: absolute;
        top:50px;
-       left:250px;
+       left:450px;
       }
       #IV{
        background-color: red; 
@@ -46,7 +46,7 @@
        height: 175px;
        position: absolute;
        top:400px;
-       left: 650px;
+       left: 875px;
       }
       #V{
        background-color: red; 
@@ -63,8 +63,8 @@
        width: 175px;
        height: 175px;
        position: absolute;
-       top:300px;
-       left: 350px;
+       top:275px;
+       left: 550px;
       }
       #VII{
        background-color: red; 
@@ -73,7 +73,16 @@
        height: 175px;
        position: absolute;
        top: 50px;
-       left: 750px;
+       left: 1050px;
+      }
+      #G{
+       background-color: red; 
+       text-align: center;
+       width: 175px;
+       height: 175px;
+       position: absolute;
+       top: 650px;
+       left: 500px;
       }
 
     </style>
@@ -87,6 +96,7 @@
       <div id='V'><p>V</p></div>
       <div id='VI'><p>VI</p></div>
       <div id='VII'><p>VII</p></div>
+      <div id='G'>G</div>
     </div>
   </body>
 </html>
