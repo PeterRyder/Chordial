@@ -25,18 +25,18 @@ class MusicXMLParser():
     file_string = ""  
     sheet = ""
 
-    def __init__(self):
+    def __init__(self, input_file_string):
         self.song_title = ""
         self.song_author = ""
         selfencoding_date = ""
         self.software = []
         self.part_group = {}
-        self.file_string = "" 
+        self.file_string = input_file_string
         self.work_title = ""
         self.work_number = ""
         self.sheet = ""
           
-    def getBasicInfo(self, input_file_string):
+    def getBasicInfo(self):
         global file_string
         global song_author
         global encoding_date
@@ -44,7 +44,6 @@ class MusicXMLParser():
         global work_title
         global work_number
         
-        self.file_string = input_file_string
         tree = ET.parse(self.file_string)
         root = tree.getroot()    
         for movement_title in root.findall('movement-title'):
@@ -77,6 +76,7 @@ class MusicXMLParser():
                                 
     def getNotes(self):
         global sheet
+        print self.file_string
         self.sheet = converter.parse(self.file_string)
         
     

@@ -18,41 +18,42 @@ from MusicStorage import *
 
 ######################
 
-musicParsed = MusicXMLParser()
-musicParsed.getBasicInfo('../xml examples/BeetAnGeSample.xml')
+getInfo = False
+parseMusic = True
 
-if musicParsed.song_title != "":
-    print "Song Title: " + musicParsed.song_title
-if musicParsed.work_number != "":
-    print "Work Number: " + musicParsed.work_number
-if musicParsed.work_title != "":
-    print "Work Title: " + musicParsed.work_title
-if musicParsed.song_author != "":
-    print "Song Author: " + musicParsed.song_author
-if musicParsed.encoding_date != "":
-    print "Encoding Date: " + musicParsed.encoding_date
+
+musicParsed = MusicXMLParser('../midi examples/example.mid')
+if getInfo:
+    musicParsed.getBasicInfo()
+
+    if musicParsed.song_title != "":
+        print "Song Title: " + musicParsed.song_title
+    if musicParsed.work_number != "":
+        print "Work Number: " + musicParsed.work_number
+    if musicParsed.work_title != "":
+        print "Work Title: " + musicParsed.work_title
+    if musicParsed.song_author != "":
+        print "Song Author: " + musicParsed.song_author
+    if musicParsed.encoding_date != "":
+        print "Encoding Date: " + musicParsed.encoding_date
                 
-print "Software used: "     
-for i in musicParsed.software:
-    print "  " + i
+    print "Software used: "     
+    for i in musicParsed.software:
+        print "  " + i
     
     
-print "Instruments Used:"
-i = 0
-for i in musicParsed.part_group:
-    print str(i) + " " + musicParsed.part_group[i]
-    i+=1
+    print "Instruments Used:"
+    i = 0
+    for i in musicParsed.part_group:
+        print str(i) + " " + musicParsed.part_group[i]
+        i+=1
 
-print ""
+    print ""
 
 # fully parse the xml
-musicParsed.getNotes()
-#musicParsed.sheet.show('text')
-
-parts = musicParsed.sheet.getElementsByClass(stream.Part)
-#print parts
-notes = parts.getElementsByClass('note.Note')
-print notes
+if parseMusic:
+    musicParsed.getNotes()
+    musicParsed.sheet.show('text')
 
 # store the sheet into a data structure
 ## TODO ##
