@@ -28,7 +28,7 @@ class MusicAnalysis():
 
  #    def compare(chord, chordtext):
 	# i = 0
-	# for j in range(0,chord.len()):
+	# for j in range(0,chordtext.len()):
 	# 	if(chord[0] == chordtext[j]):
 	# 		i+=1;
 	# if i == chordtext.len():
