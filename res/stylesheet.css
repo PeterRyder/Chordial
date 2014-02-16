@@ -1,83 +1,63 @@
 body{
-        background-color: green;
-      }
-      #border{
-        width: 1600px;
-        height: 900px;
-        position: relative;
-      }
-      #title{
-        text-align: center;
-      }
-      #I {
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top:475px;
-       left: 20px;
-      }
-      #II{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top: 650px;
-       left: 1000px;
-      }
-      #III{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top:50px;
-       left:450px;
-      }
-      #IV{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top:400px;
-       left: 875px;
-      }
-      #V{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top: 475px;
-       right:20px;
-      }
-      #VI{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top:275px;
-       left: 550px;
-      }
-      #VII{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top: 50px;
-       left: 1050px;
-      }
-      #G{
-       background-color: red; 
-       text-align: center;
-       width: 175px;
-       height: 175px;
-       position: absolute;
-       top: 650px;
-       left: 500px;
-      }
+      background-color: green;
+}
+.box{
+      background-color: red; 
+      text-align: center;
+      width: 175px;
+      height: 175px;
+}
+.box2{
+      background-color: yellow;
+      text-align: center;
+      width: 175px;
+      height: 175px;
+}
+#border{
+      width: 1600px;
+      height: 900px;
+      position: relative;
+}
+#title{
+      text-align: center;
+}
+#I {
+      position: absolute;
+      top:475px;
+      left: 20px;
+}
+#II{
+      position: absolute;
+      top: 650px;
+      left: 1000px;
+}
+#III{
+      position: absolute;
+      top:50px;
+      left:450px;
+}
+#IV{
+      position: absolute;
+      top:400px;
+      left: 875px;
+}
+#V{
+      position: absolute;
+      top: 475px;
+      right:20px;
+}
+#VI{
+      position: absolute;
+      top:275px;
+      left: 550px;
+}
+#VII{
+      position: absolute;
+      top: 50px;
+      left: 1050px;
+}
+#G{
+      position: absolute;
+      top: 650px;
+      left: 500px;
+}

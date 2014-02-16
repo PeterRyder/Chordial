@@ -45,8 +45,8 @@
       function color(prog, i){
           if(i < size){
             var rn = prog[i];
-            if( i  == 0){
-              
+            if(i  == 0){
+
             } 
             else if (i == 1){
 
@@ -65,14 +65,14 @@
   <body onload="load()">
     <div id='border'>
       <div id='title'></div>
-      <div id='1'><p>I</p></div>
-      <div id='2'><p>II</p></div>
-      <div id='3'><p>III</p></div>
-      <div id='4'><p>IV</p></div>
-      <div id='5'><p>V</p></div>
-      <div id='6'><p>VI</p></div>
-      <div id='7'><p>VII</p></div>
-      <div id='G'>G</div>
+      <div class='box' id='1'><p>I</p></div>
+      <div class='box' id='2'><p>II</p></div>
+      <div class='box' id='3'><p>III</p></div>
+      <div class='box' id='4'><p>IV</p></div>
+      <div class='box' id='5'><p>V</p></div>
+      <div class='box' id='6'><p>VI</p></div>
+      <div class='box' id='7'><p>VII</p></div>
+      <div class='box' id='G'>G</div>
     </div>
   </body>
 </html>
