@@ -22,7 +22,7 @@ getInfo = False
 parseMusic = True
 
 
-musicParsed = MusicXMLParser('../midi examples/example.mid')
+musicParsed = MusicXMLParser('../xml examples/BeetAnGeSample.xml')
 if getInfo:
     musicParsed.getBasicInfo()
 
@@ -54,6 +54,13 @@ if getInfo:
 if parseMusic:
     musicParsed.getNotes()
     musicParsed.sheet.show('text')
+    
+#for i in musicParsed.sheet:
+#    #print i
+#    for j in i:
+#        print j.beatDuration
+        
+            
 
 # store the sheet into a data structure
 ## TODO ##
