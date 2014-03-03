@@ -5,8 +5,7 @@
 #### API Imports #####
 
 from music21 import *
-from numpy import *
-from scipy import *
+
 
 ######################
 
