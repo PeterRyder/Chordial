@@ -5,11 +5,9 @@
 #### API Imports #####
 
 from music21 import *
-
+import xml.etree.ElementTree as ET
 
 ######################
-
-import xml.etree.ElementTree as ET
 
 print ""
 

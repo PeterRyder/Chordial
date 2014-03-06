@@ -1,4 +1,3 @@
-Chord	Notes
 Cmaj	C E G
 C#maj	C# F G#
 Dmaj	D F# A
