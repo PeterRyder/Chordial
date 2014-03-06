@@ -5,8 +5,7 @@
 #### API Imports #####
 
 from music21 import *
-
-######################
+import math
 
 ######################
 
@@ -19,9 +18,6 @@ chordDictionary = {"Cmaj": ["C", "E", "G"], "C#maj": ["C#", "F", "G#"], "Dmaj": 
 class MusicAnalysis():
     musicParsed = None
     keySignature = None
-    
-    previousChord = None
-    currentChord = None
     
     def __init__(self, input_data_structure):
         self.musicParsed = input_data_structure
@@ -65,18 +61,128 @@ class MusicAnalysis():
 		    if (amountOfSharps == -6):
 			keySignature = "G-"
 		    if (amountOfSharps == -7):
-			keySignature = "C-"		    
+			keySignature = "C-"
+		
+		
+		previousChord = None
+		currentChord = None		
 		    
 		for chord in measure.getElementsByClass('Chord'):
 		    stl = stream.Stream()
+		    # add a key signature
 		    stl.append(key.Key(keySignature))
+		    # add the chord
 		    stl.append(chord)
-		    #print chord.scaleDegrees
 		    
+		    currentChord = chord
+		    
+		    # list containing note in numeral form relative to key
+		    notesNumerals = []
+		    
+		    # notes in the chord in music21 note class format
 		    notes = []
-		    for note in chord.scaleDegrees:
-			
+		    
+		    # store the notes in numeral form relative to the key
+		    for note in currentChord.scaleDegrees:
+			if note[1] == None:
+			    notesNumerals.append(note)
+		    
+		    # store the notes in music21 note class form
+		    for note in currentChord:
 			notes.append(note)
 			
-		    notes = set(notes)
-		    print notes
+		    # convert the lists to sets
+		    #notesNumerals = set(notesNumerals)
+		    
+		    # removes the first note if there are duplicates of that note
+		      
+		    #iIndex = 0
+		    #for i in notes:
+			#jIndex = 0
+			#for j in notes:
+			    #if iIndex != jIndex:
+				#if i.name == j.name:
+				    #notes.remove(i)
+				    
+			    #jIndex += 1
+			#iIndex += 1
+			
+		    currentChordNumeral = None
+		    previousChordNumeral = None
+		    
+		    noteNumeralsList = []
+		    
+		    previousNumeral = None
+		    currentNumeral = None
+		    
+		    currentNote = None
+		    previousNote = None
+		    
+		    numeralChange = None
+		    
+		    noteIndex = 0
+
+		    print currentChord
+		    for i in notesNumerals:
+			currentNote = notes[noteIndex]
+			firstRun = None
+						
+			currentNumeral = i[0]
+			
+			#print "current numeral " + str(currentNumeral)
+			#print "previous numeral " + str(previousNumeral)			
+
+			if previousNumeral != None:
+			    
+			    if currentNumeral < previousNumeral:
+				numeralChange = 7 - previousNumeral + currentNumeral + 1
+			    else:
+				numeralChange = currentNumeral - previousNumeral
+				numeralChange += 1
+				
+			    
+			    previousNumeral = currentNumeral
+			    firstRun = False
+			else:
+			    previousNumeral = currentNumeral
+			    firstRun = True
+			    
+			# if the notes are the same, it went up an octave
+			if numeralChange == 1:
+			    numeralChange = 8
+			
+			if firstRun == False:
+			    print previousNote.name + " shifts up " + str(numeralChange) + " to " + currentNote.name
+			    noteNumeralsList.append(previousNote.name)
+			    noteNumeralsList.append(numeralChange)
+			    
+			previousNote = currentNote
+			    
+			noteIndex += 1
+			
+		    
+		    # end of loop for note numerals #
+		
+		    previousChord = currentChord
+		    
+		    print noteNumeralsList
+		    
+		    for i in noteNumeralsList:
+			print i
+			    
+			
+			
+		    
+		# end of loop through chords in measure #
+		
+		
+	    # end of loop through measures #
+    
+    
+	# end of loop through parts #
+
+    
+    # end of analyze notes function #
+
+    
+# end of class #

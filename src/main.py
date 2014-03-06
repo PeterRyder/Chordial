@@ -16,7 +16,7 @@ from MusicAnalysis import *
 
 ######################
 
-getInfo = False
+getInfo = True
 parseMusic = True
 
 
