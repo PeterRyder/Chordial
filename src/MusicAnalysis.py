@@ -17,25 +17,66 @@ chordDictionary = {"Cmaj": ["C", "E", "G"], "C#maj": ["C#", "F", "G#"], "Dmaj": 
 ######################
 
 class MusicAnalysis():
-    data_structure = ""
+    musicParsed = None
+    keySignature = None
+    
+    previousChord = None
+    currentChord = None
     
     def __init__(self, input_data_structure):
-        self.data_structure = input_data_structure
+        self.musicParsed = input_data_structure
         
     def analyzeNotes(self):
-        ## TODO ##
-        print "Music analysis will happen here"
-        ## TODO ##
-    
-
-
-
-
-
- #    def compare(chord, chordtext):
-	# i = 0
-	# for j in range(0,len(chordtext)):
-	# 	if(chord[0] == chordtext[j]):
-	# 		i += 1;
-	# if (i == len(chordtext)):
-	# 	return True
+	global musicParsed
+	
+        for voice in self.musicParsed.sheet.getElementsByClass('Part'):
+	    for measure in voice.getElementsByClass('Measure'):
+		for keySignature1 in measure.getElementsByClass('KeySignature'):
+		    amountOfSharps = keySignature1.sharps
+		    
+		    if (amountOfSharps == 0):
+			keySignature = "C"
+			
+		    if (amountOfSharps == 1):
+			keySignature = "G"
+		    if (amountOfSharps == 2):
+			keySignature = "D"
+		    if (amountOfSharps == 3):
+			keySignature = "A"
+		    if (amountOfSharps == 4):
+			keySignature = "E"
+		    if (amountOfSharps == 5):
+			keySignature = "B"
+		    if (amountOfSharps == 6):
+			keySignature = "F#"
+		    if (amountOfSharps == 7):
+			keySignature = "C#"
+			
+		    if (amountOfSharps == -1):
+			keySignature = "F"
+		    if (amountOfSharps == -2):
+			keySignature = "B-"
+		    if (amountOfSharps == -3):
+			keySignature = "E-"
+		    if (amountOfSharps == -4):
+			keySignature = "A-"
+		    if (amountOfSharps == -5):
+			keySignature = "D-"
+		    if (amountOfSharps == -6):
+			keySignature = "G-"
+		    if (amountOfSharps == -7):
+			keySignature = "C-"		    
+		    
+		for chord in measure.getElementsByClass('Chord'):
+		    stl = stream.Stream()
+		    stl.append(key.Key(keySignature))
+		    stl.append(chord)
+		    #print chord.scaleDegrees
+		    
+		    notes = []
+		    for note in chord.scaleDegrees:
+			
+			notes.append(note)
+			
+		    notes = set(notes)
+		    print notes

@@ -13,7 +13,6 @@ from music21 import *
 
 from MusicXMLParser import *
 from MusicAnalysis import *
-from MusicStorage import *
 
 ######################
 
@@ -53,25 +52,11 @@ if getInfo:
 if parseMusic:
     musicParsed.getNotes()
     musicParsed.sheet.show('text')
-    
-#for i in musicParsed.sheet:
-#    #print i
-#    for j in i:
-#        print j.beatDuration
         
-            
 
-# store the sheet into a data structure
-## TODO ##
-musicStorage = MusicStorage(musicParsed.sheet)
-musicStorage.storeNotes()
-## TODO ##
-
-# temporary string to fill in for data structure
-data_structure = ""
 
 # analyze the music using the data structure
-## TODO ##
-musicAnalyze = MusicAnalysis(data_structure)
+
+musicAnalyze = MusicAnalysis(musicParsed)
 musicAnalyze.analyzeNotes()
-## TODO ##
+
