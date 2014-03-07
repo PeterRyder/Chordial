@@ -135,8 +135,10 @@ class MusicAnalysis():
 			if previousNumeral != None:
 			    
 			    if currentNumeral < previousNumeral:
+				# if the current note is smaller than the previous note, we need to do special music stuff
 				numeralChange = 7 - previousNumeral + currentNumeral + 1
 			    else:
+				# if the current note is greater than the previous, just subtract
 				numeralChange = currentNumeral - previousNumeral
 				numeralChange += 1
 				

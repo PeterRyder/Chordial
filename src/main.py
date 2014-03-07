@@ -17,18 +17,19 @@ from MusicAnalysis import *
 
 ######################
 
-getInfo = True
+getInfo = False
 parseMusic = True
 
 if __name__ == "__main__":
     
     # future passing in from front end of file location
-    s = sys.argv
+    fileName = sys.argv
     
     musicParsed = MusicXMLParser('../xml examples/BeetAnGeSample.xml')
     if getInfo:
         musicParsed.getBasicInfo()
     
+        # print out interesting things about the song
         if musicParsed.song_title != "":
             print "Song Title: " + musicParsed.song_title
         if musicParsed.work_number != "":
@@ -57,11 +58,8 @@ if __name__ == "__main__":
     if parseMusic:
         musicParsed.getNotes()
         musicParsed.sheet.show('text')
-            
-    
-    
-    # analyze the music using the data structure
-    
-    musicAnalyze = MusicAnalysis(musicParsed)
-    musicAnalyze.analyzeNotes()
+        
+        # analyze the music using the data structure
+        musicAnalyze = MusicAnalysis(musicParsed)
+        musicAnalyze.analyzeNotes()
 
