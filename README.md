@@ -1,3 +1,3 @@
-This is a basic parser for Music XML.
+A basic music parser and analyzer using music21
 
 The license is included in License.txt

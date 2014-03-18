@@ -91,22 +91,6 @@ class MusicAnalysis():
 		    for note in currentChord:
 			notes.append(note)
 			
-		    # convert the lists to sets
-		    #notesNumerals = set(notesNumerals)
-		    
-		    # removes the first note if there are duplicates of that note
-		      
-		    #iIndex = 0
-		    #for i in notes:
-			#jIndex = 0
-			#for j in notes:
-			    #if iIndex != jIndex:
-				#if i.name == j.name:
-				    #notes.remove(i)
-				    
-			    #jIndex += 1
-			#iIndex += 1
-			
 		    currentChordNumeral = None
 		    previousChordNumeral = None
 		    
