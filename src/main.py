@@ -2,7 +2,7 @@
 
 # Authors: Peter Ryder, Jake Lowey, Mark Westerhoff
 
-#### API Imports #####
+#### API Imports ################
 
 from music21 import *
 import sys
