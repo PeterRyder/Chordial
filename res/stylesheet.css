@@ -1,9 +1,7 @@
-body{
-      
-}
 
-body.background {
-      width: 100%;
+
+.background {
+      width: 98%;
       height: 100%;
       background: url('background.jpg') no-repeat center fixed;
       z-index: -20;
@@ -61,12 +59,22 @@ body.background {
       width: 150px;
       height: 150px;
 }
-#border{
+.border{
+      background: rgb(169, 169, 169);
+      background: rgba(169, 169, 169, .85);
+      border-radius: 15px;
       width: 1600px;
       height: 900px;
       margin: auto;
       position: relative;
 }
+
+.position{
+      position: absolute;
+      top:850px;
+      left:20px;
+}
+
 .title{
       text-align: center;
       font-size: 1.5em;

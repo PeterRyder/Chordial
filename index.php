@@ -1,5 +1,5 @@
 <?php
-  @ $db = new mysqli('localhost', 'root', 'chordial', 'chordial');
+  @ $db = new mysqli('localhost', 'root', 'game3785', 'chordial');
 
   $dbOK = false;
 
@@ -9,13 +9,13 @@
   } else {
     $dbOk = true; 
   }
-
-  $result = $db->query("SELECT * FROM `chordial` WHERE `ID` = 1 ");
-  $row = $result->fetch_array(MYSQLI_ASSOC);
-  $title = $row["Title"];
-  $comp = $row["Composer"];
-  $prog = $row["Progression"];
-
+  if($dbOk){
+    $result = $db->query("SELECT * FROM `chordial` WHERE `ID` = 1 ");
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    $title = $row["Title"];
+    $comp = $row["Composer"];
+    $prog = $row["Progression"];
+  }
 ?>
 
 
@@ -101,8 +101,8 @@
 
     </style>
   </head>
-  <body onload="load()">
-    <div id='border'>
+  <body class="background" onload="load()">
+    <div class='border'>
       <div class='title' id='title'></div>
       <div class='box' id='I'><p>I</p></div>
       <div class='box' id='II'><p>II</p></div>
@@ -112,7 +112,11 @@
       <div class='box' id='VI'><p>VI</p></div>
       <div class='box' id='VII'><p>VII</p></div>
       <div class='box' id='G'><p>G</p></div>
+      <div class='position'>
+        <button class='title' type="button" onclick="play()">Play</button>
+      </div>
+      
     </div>
-    <button class='title' type="button" onclick="play()">Play</button>
+    
   </body>
 </html>
