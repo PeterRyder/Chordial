@@ -118,9 +118,25 @@ class MusicAnalysis():
 	for whichClef in measure.getElementsByClass('TrebleClef'):
 	    #print whichClef
 	    clef = whichClef
-		
-	#for note in measure.getElementsByClass('Note'):
+	
+	for note in measure.getElementsByClass('Note'):
+	    notes = []
 	    #print note
+	    #notes.append(note)
+	    
+	    for voice1 in self.musicParsed.sheet.getElementsByClass('Part'):
+		for measure1 in voice1.getElementsByClass('Measure'):
+		    if measure1.number == measure.number:
+			for note1 in measure1.getElementsByClass('Note'):
+			    if note1.beat == note.beat:
+				if note1.measureNumber == note.measureNumber:
+				    if note not in notes:
+					notes.append(note1)
+	
+	    if len(notes) > 1:
+		print notes
+	    
+	
 			    
     def analyzeNotes(self):
 	global musicParsed
@@ -128,4 +144,4 @@ class MusicAnalysis():
 	for voice in self.musicParsed.sheet.getElementsByClass('Part'):
 	    for measure in voice.getElementsByClass('Measure'):
 		self.getNumeralsByChord(measure)
-		#self.getNumeralsByNote(measure)
+		self.getNumeralsByNote(measure)
