@@ -43,41 +43,86 @@ class MusicAnalysis():
 		for keySignature1 in measure.getElementsByClass('KeySignature'):
 		    amountOfSharps = keySignature1.sharps
 		    
-		    # sets key signature to key of C
-		    if (amountOfSharps == 0):
-			keySignature = "C"
+		    # gets the mode of the piece
+		    mode = keySignature1.mode
 		    
-		    # sets key signature to any of the signatures with sharps
-		    if (amountOfSharps == 1):
-			keySignature = "G"
-		    if (amountOfSharps == 2):
-			keySignature = "D"
-		    if (amountOfSharps == 3):
-			keySignature = "A"
-		    if (amountOfSharps == 4):
-			keySignature = "E"
-		    if (amountOfSharps == 5):
-			keySignature = "B"
-		    if (amountOfSharps == 6):
-			keySignature = "F#"
-		    if (amountOfSharps == 7):
-			keySignature = "C#"
+		    # if the mode is major, get the key signature
+		    if (mode == "major"):
+		    
+			# sets key signature to key of C
+			if (amountOfSharps == 0):
+			    keySignature = "C"
 			
-		    # sets key signature to any of the signatures with flats
-		    if (amountOfSharps == -1):
-			keySignature = "F"
-		    if (amountOfSharps == -2):
-			keySignature = "B-"
-		    if (amountOfSharps == -3):
-			keySignature = "E-"
-		    if (amountOfSharps == -4):
-			keySignature = "A-"
-		    if (amountOfSharps == -5):
-			keySignature = "D-"
-		    if (amountOfSharps == -6):
-			keySignature = "G-"
-		    if (amountOfSharps == -7):
-			keySignature = "C-"
+			# sets key signature to any of the signatures with sharps
+			elif (amountOfSharps == 1):
+			    keySignature = "G"
+			elif (amountOfSharps == 2):
+			    keySignature = "D"
+			elif (amountOfSharps == 3):
+			    keySignature = "A"
+			elif (amountOfSharps == 4):
+			    keySignature = "E"
+			elif (amountOfSharps == 5):
+			    keySignature = "B"
+			elif (amountOfSharps == 6):
+			    keySignature = "F#"
+			elif (amountOfSharps == 7):
+			    keySignature = "C#"
+			    
+			# sets key signature to any of the signatures with flats
+			elif (amountOfSharps == -1):
+			    keySignature = "F"
+			elif (amountOfSharps == -2):
+			    keySignature = "Bb"
+			elif (amountOfSharps == -3):
+			    keySignature = "Eb"
+			elif (amountOfSharps == -4):
+			    keySignature = "Ab"
+			elif (amountOfSharps == -5):
+			    keySignature = "Db"
+			elif (amountOfSharps == -6):
+			    keySignature = "Gb"
+			elif (amountOfSharps == -7):
+			    keySignature = "Cb"
+			    
+		    # if the mode is minor, get the key signature
+		    elif (mode == minor):
+			
+			# if there are not sharps or flats
+			if (amountOfSharps == 0):
+			    keySignature = "A"
+			    
+			# sets key signature to any of the signatures with sharps
+			elif (amountOfSharps == 1):
+			    keySignature = "E"
+			elif (amountOfSharps == 2):
+			    keySignature = "B"
+			elif (amountOfSharps == 3):
+			    keySignature = "F#"
+			elif (amountOfSharps == 4):
+			    keySignature = "C#"
+			elif (amountOfSharps == 5):
+			    keySignature = "G#"
+			elif (amountOfSharps == 6):
+			    keySignature = "D#"
+			elif (amountOfSharps == 7):
+			    keySignature = "A#"
+			    
+			# sets key signature to any of the signatures with flats
+			elif (amountOfSharps == -1):
+			    keySignature = "D"
+			elif (amountOfSharps == -2):
+			    keySignature = "G"
+			elif (amountOfSharps == -3):
+			    keySignature = "C"
+			elif (amountOfSharps == -4):
+			    keySignature = "F"
+			elif (amountOfSharps == -5):
+			    keySignature = "Bb"
+			elif (amountOfSharps == -6):
+			    keySignature = "Eb"
+			elif (amountOfSharps == -7):
+			    keySignature = "Ab"			
 		
 		for whichClef in measure.getElementsByClass('TrebleClef'):
 		    #print whichClef
@@ -85,8 +130,6 @@ class MusicAnalysis():
 		
 		previousChord = None
 		currentChord = None	
-		
-		
 		
 		for chord in measure.getElementsByClass('Chord'):
 		    stl = stream.Stream()
