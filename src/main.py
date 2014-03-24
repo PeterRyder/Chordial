@@ -7,7 +7,6 @@
 from music21 import *
 import sys
 
-
 ######################
 
 #### File Imports ####
@@ -25,7 +24,7 @@ if __name__ == "__main__":
     # future passing in from front end of file location
     fileName = sys.argv
     
-    musicParsed = MusicXMLParser('../xml examples/test1.xml')
+    musicParsed = MusicXMLParser('../xml examples/MozaVeilSample.xml')
     if getInfo:
         musicParsed.getBasicInfo()
     
@@ -57,9 +56,14 @@ if __name__ == "__main__":
     # fully parse the xml
     if parseMusic:
         musicParsed.getNotes()
-        musicParsed.sheet.show('text')
+        musicParsed.sheet.show("text")
         
         # analyze the music using the data structure
         musicAnalyze = MusicAnalysis(musicParsed)
         musicAnalyze.analyzeNotes()
+        
+        
+        
+        
+# thread.startNewThread(functionName,(arg, args))
 
