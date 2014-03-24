@@ -166,6 +166,15 @@ class MusicAnalysis():
 				if note1.measureNumber == chord.measureNumber:
 				    notes.append(note1)
 	    print notes	
+	    chord1 = chord.Chord(notes)
+	    getNumeral(chord1, KeySignature)
+
+
+	
+    def getNumeral(self, chord1, keySign):
+	
+	
+    def getDiff(self, note1, note2):	    
 
 	
     def getNumeralsByNote(self, measure):
