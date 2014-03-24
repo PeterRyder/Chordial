@@ -19,7 +19,7 @@ import math
 # run through the data structure for all of P1 in Treble cleff
 #    find all the chords and notes
 
-# run through the data strucutre for all of P1 in Bass cleff (if applicable
+# run through the data structure for all of P1 in Bass cleff (if applicable
 #    find all the chords and notes
 
 # continue the above process for P2, P3, P4...
@@ -46,84 +46,14 @@ class MusicAnalysis():
 	    
 			# gets the mode of the piece
 			mode = keySignature1.mode
-			
-			# if the mode is major, get the key signature
-			if (mode == "major"):
-			
-			    # sets key signature to key of C
-			    if (amountOfSharps == 0):
-				keySignature = "C"
-				
-			    # sets key signature to any of the signatures with sharps
-			    elif (amountOfSharps == 1):
-				keySignature = "G"
-			    elif (amountOfSharps == 2):
-				keySignature = "D"
-			    elif (amountOfSharps == 3):
-				keySignature = "A"
-			    elif (amountOfSharps == 4):
-				keySignature = "E"
-			    elif (amountOfSharps == 5):
-				keySignature = "B"
-			    elif (amountOfSharps == 6):
-				keySignature = "F#"
-			    elif (amountOfSharps == 7):
-				keySignature = "C#"
-				
-			    # sets key signature to any of the signatures with flats
-			    elif (amountOfSharps == -1):
-				keySignature = "F"
-			    elif (amountOfSharps == -2):
-				keySignature = "Bb"
-			    elif (amountOfSharps == -3):
-				keySignature = "Eb"
-			    elif (amountOfSharps == -4):
-				keySignature = "Ab"
-			    elif (amountOfSharps == -5):
-				keySignature = "Db"
-			    elif (amountOfSharps == -6):
-				keySignature = "Gb"
-			    elif (amountOfSharps == -7):
-				keySignature = "Cb"	
-					    
-			# if the mode is minor, get the key signature
-			elif (mode == minor):
-			    
-			    # if there are not sharps or flats
-			    if (amountOfSharps == 0):
-				keySignature = "A"
-			   
-			    # sets key signature to any of the signatures with sharps
-			    elif (amountOfSharps == 1):
-				keySignature = "E"
-			    elif (amountOfSharps == 2):
-				keySignature = "B"
-			    elif (amountOfSharps == 3):
-				keySignature = "F#"
-			    elif (amountOfSharps == 4):
-				keySignature = "C#"
-			    elif (amountOfSharps == 5):
-				keySignature = "G#"
-			    elif (amountOfSharps == 6):
-				keySignature = "D#"
-			    elif (amountOfSharps == 7):
-				keySignature = "A#"
-					    
-			    # sets key signature to any of the signatures with flats
-			    elif (amountOfSharps == -1):
-				keySignature = "D"
-			    elif (amountOfSharps == -2):
-				keySignature = "G"
-			    elif (amountOfSharps == -3):
-				keySignature = "C"
-			    elif (amountOfSharps == -4):
-				keySignature = "F"
-			    elif (amountOfSharps == -5):
-				keySignature = "Bb"
-			    elif (amountOfSharps == -6):
-				keySignature = "Eb"
-			    elif (amountOfSharps == -7):
-				keySignature = "Ab"
+			majors = {0:"C", 1:"G", 2:"D", 3:"A", 4:"E", 5:"B",6:"F#", 7:"C#", 
+			          -1:"F", -2:"Bb", -3:"Eb", -4:"Ab", -5:"Db", -6:"Gb", -7:"Cb"}
+			minors = {0:"A", 1:"E", 2:"B", 3:"F#", 4:"C#", 5:"G#", 6:"D#", 7:"A#",
+			        -1:"D", -2:"G", -3:"C", -4:"F", -5:"Bb", -6:"Eb", -7:"Ab"}
+			if mode == "major":
+			    keySignature = majors[amountOfSharps]
+			elif mode == "minor":
+			    keySignature = minors[amountOfSharps]
     
     
 
