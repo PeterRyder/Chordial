@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # future passing in from front end of file location
     fileName = sys.argv
     
-    musicParsed = MusicXMLParser('../xml examples/BeetAnGeSample.xml')
+    musicParsed = MusicXMLParser('../xml examples/test1.xml')
     if getInfo:
         musicParsed.getBasicInfo()
     
