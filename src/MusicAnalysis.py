@@ -106,12 +106,22 @@ class MusicAnalysis():
 	   # getNumeral(chord1, KeySignature)
 
 
+    #returns the roman numeral of the chord based off of the key signature
+    def getNumeral(self, chord1, keySign):
+	root = chord1.root()
+	offset = getOffset(root, keySign)
+	return offset
 	
-    #def getNumeral(self, chord1, keySign):
-	
-	
-    #def getDiff(self, note1, note2):	    
-
+    #gets offset of note from key signature
+    #uses ASCII values; special case to allow G
+    #to cycle back to A. Ignores octaves
+    def getOffset(self, note1, keySign):
+	note1 = (note1.name)[0]
+	keySign = keySign[0]
+	if ord(note1) - ord(keySign) >= 0:
+	    return ord(note1) - ord(keySign) + 1
+	else:
+	    return ord(note1) - ord(keySign) + 7
 	
     def getNumeralsByNote(self, measure):
 	self.getKeySignature(measure.number)
