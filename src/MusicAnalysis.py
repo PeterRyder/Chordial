@@ -132,12 +132,14 @@ class MusicAnalysis():
 	
 	clef = None
 	whichClef = None
+
 	
 	for whichClef in measure.getElementsByClass('TrebleClef'):
 	    #print whichClef
 	    clef = whichClef	
 	    
 	for chord in measure.getElementsByClass('Chord'):
+	    #print chord, chord.beat
 	    stl = stream.Stream()
 	    # add a key signature
 	    stl.append(key.Key(keySignature))
@@ -160,33 +162,16 @@ class MusicAnalysis():
 	    # store the notes in music21 note class form
 	    for note in currentChord:
 		notes.append(note)
-	
-	    #print currentChord
 	    
-	    for voice2 in self.musicParsed.sheet.getElementsByClass('Part'):
-		for measure2 in voice2.getElementsByClass('Measure'):
-		    #print measure2
-		    #print measure
-		    #print ''
+	    for voice in self.musicParsed.sheet.getElementsByClass('Part'):
+		for measure in voice.getElementsByClass('Measure'):	    
+		    for note1 in measure.getElementsByClass('Note'):
+			if note1.beat == chord.beat:
+			    if note1.measureNumber == chord.measureNumber:
+				#print note1
+				notes.append(note1)
+	    print notes	
 
-		    for whichClef2 in measure2.getElementsByClass('BassClef'):
-			print clef
-			print whichClef2
-			print ''
-			if clef != whichClef2:
-			    print whichClef
-			    print measure2
-			    print voice2
-			    
-			    for note in measure2.getElementsByClass('Note'):
-				print note
-				print ''
-				stl = stream.Stream()
-			
-				stl.append(key.Key(keySignature))
-				stl.append(note)		
-				notes.append(note)
-		print notes	
 	
     def getNumeralsByNote(self, measure):
 	self.getKeySignature()
