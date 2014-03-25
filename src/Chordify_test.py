@@ -2,6 +2,7 @@ from music21 import *
 from transitions import *
 
 #uses core corpus
+#BrahWiMeSample
 b = corpus.parse('Test1')
 #b.show('text')
 
@@ -22,7 +23,10 @@ for c in bChords.flat.getElementsByClass('Chord'):
     rn = roman.romanNumeralFromChord(c, key.Key('A'))
     stats.addNumeral(rn)
     c.addLyric(str(rn.figure))
-#b.measures(0, 2).show()
+#bChords.measures(0, 2).show()
+bChords.show()
+
+
 
 #prints the roman numerals, i.e. lyrics
 for c in bChords.measures(0,2).flat:
