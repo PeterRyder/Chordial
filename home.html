@@ -1,13 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+
     <title>Chordial</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="res/jquery-ui-1.10.4/themes/base/jquery-ui.css">
+	<script src="res/jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+	<script src="res/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
     <link rel="stylesheet" href="res/stylesheet.css" type="text/css"/>
   </head>
 	<body class='background'>
 		<div class='back'>
-			<h1 class='tit' id="style">
+			<h1 class='ti' id="style">
 				Chordial: A Music Analysis Tool
 			</h1>
 		</div>
@@ -34,6 +38,13 @@
 			</form>
 
 		</div>
+		<div id="progressbar"><div class="progress-label">37%</div></div>
+ 
+		<script>
+			$( "#progressbar" ).progressbar({
+	  		value: 37
+			});
+		</script>
 		<div class='output'></div>
 	</body>
 </html>
