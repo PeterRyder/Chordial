@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from QArrow import *
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -32,6 +33,9 @@ class Ui_MainWindow(object):
         self.Main = QtGui.QWidget(MainWindow)
         self.Main.setStyleSheet(_fromUtf8("background-image: background.jpg;"))
         self.Main.setObjectName(_fromUtf8("Main"))
+        self.arrow = QArrow(3,MainWindow)
+        self.arrow.setGeometry(QtCore.QRect(150, 150, 50, 50))
+        #self.arrow.rotate(45)
         self.I = QtGui.QFrame(self.Main)
         self.I.setGeometry(QtCore.QRect(40, 460, 150, 150))
         self.I.setAutoFillBackground(False)

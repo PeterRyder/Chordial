@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="newPrefix">
-    <file>background.jpg</file>
+  <qresource>
+    <file>doublearrow.png</file>
   </qresource>
 </RCC>
