@@ -1,8 +1,10 @@
-from music21 import *
+from music21 import corpus, roman, key
 from transitions import *
+from os import path
 
 #uses core corpus
 #BrahWiMeSample
+#if .path.exists(os.path.join(os.path.expanduser("~") , "AppData\\Roaming\\Reinigen\\Logs")):
 b = corpus.parse('Test1')
 #b.show('text')
 
@@ -24,7 +26,7 @@ for c in bChords.flat.getElementsByClass('Chord'):
     stats.addNumeral(rn)
     c.addLyric(str(rn.figure))
 #bChords.measures(0, 2).show()
-bChords.show()
+bChords.show('text')
 
 
 
