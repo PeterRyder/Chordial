@@ -41,6 +41,19 @@
       border-radius: 15px;
 }
 
+.arrow {
+      position: absolute;
+      top:0; 
+      left:0; 
+      z-index: 1;
+}
+
+/*.opaque{
+      opacity: .5;
+}*/
+
+
+#layer3{opacity: 1;}
 .files li {
       text-align: left;
       display: inline;
@@ -54,18 +67,21 @@
       text-align: center;
       width: 150px;
       height: 150px;
+      border-radius: 15px;
 }
 .box2{
       background-color: yellow;
       text-align: center;
       width: 150px;
       height: 150px;
+      border-radius: 15px;
 }
 .box3{
       background-color: blue;
       text-align: center;
       width: 150px;
       height: 150px;
+      border-radius: 15px;
 }
 .border{
       background: rgb(169, 169, 169);
@@ -100,7 +116,7 @@
 #III{
       position: absolute;
       top:50px;
-      left:450px;
+      left:400px;
 }
 #IV{
       position: absolute;
