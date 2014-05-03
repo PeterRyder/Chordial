@@ -43,12 +43,12 @@
             },
             src: {
                 getXY: function() {
-                    return [95, 465];
+                    return [165, 555];
                 }
             },
             tgt: {
                 getXY: function() {
-                    return [390, 120];
+                    return [1420, 555];
                 }
             }
         });
