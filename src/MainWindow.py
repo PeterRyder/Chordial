@@ -82,6 +82,7 @@ class Ui_mainWindow(object):
             
             work_name = file_name.split('.')
             work_name = work_name[0]
+                
             print "work name: " + work_name
     
             
@@ -149,8 +150,6 @@ class Ui_mainWindow(object):
             
             temp = 1
             for i in output:
-                
-                
                 self.label = QtGui.QLabel(self.scrollAreaWidgetContents)
                 self.label.setObjectName(_fromUtf8("label"))
                 self.gridLayout_2.addWidget(self.label, temp, 0, 1, 1)
